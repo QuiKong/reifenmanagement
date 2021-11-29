@@ -1,162 +1,196 @@
-<!DOCTYPE html>
 <html>
+    
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="style.css">
-<script src="scripts.js"></script>
-</head>
-<body>
-   <div class="navbar">
-      <a class="active" href="#"><i class="fa fa-fw fa-home"></i>Einstellungen </a> 
-      <a href="#"><i class="fa fa-fw fa-user"></i> Logout</a>
-      <a href="#" style="float: right; margin-left: 10px;"><i class="fa fa-fw fa-envelope"></i> Display Timer here </a> 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="manager.css">
 
+    <script>
+    function opentab(evt, tabName) {
+       var i, tabcontent, tablinks;
+       tabcontent = document.getElementsByClassName("tabcontent");
+       for (i = 0; i < tabcontent.length; i++) {
+         tabcontent[i].style.display = "none";
+       }
+       tablinks = document.getElementsByClassName("tablinks");
+       for (i = 0; i < tablinks.length; i++) {
+         tablinks[i].className = tablinks[i].className.replace(" active", "");
+       }
+       document.getElementById(tabName).style.display = "block";
+       evt.currentTarget.className += " active";
+     }
+     
+     // Get the element with id="defaultOpen" and click on it
+     document.getElementById("defaultOpen").click();
+     
+     </script>
+ 
+    </head>
+    <body>
+       
+       <div class="navbar">
+          <a class="active" href="manager.html" ><i class="fa fa-fw fa-home"></i>Home </a> 
+          <a href="einstellungen.html"><i class="fa fa-fw fa-Einstellungen"></i>Einstellungen </a> 
+          <a href="#Logout"><i class="fa fa-fw fa-Logout"></i> Logout</a>
+          <a href="#Timer" style="float: right;"><i class="fa fa-fw fa-Timer"></i> Display Timer here </a> 
+        </div>
+        
+        <section></section>
+    
+    
+    <img src="./assets/2cars.jpg" alt="Logo" style="align-self: center; width: 80%;">
+    
+    
+    <section></section>
+    
+    
+    <div class="tab">
+      <button class="tablinks active" onclick="opentab(event, 'Benachrichtungen')" id="defaultOpen">Benachrichtungen</button>
+      <button class="tablinks" onclick="opentab(event, 'Reifen Organisation')">Reifen Organisation</button>
+      <button class="tablinks" onclick="opentab(event, 'Statestiks')">Statestiks</button>
+      <button class="tablinks" onclick="opentab(event, 'Diagramm')">Diagramm</button>
+      <button class="tablinks" onclick="opentab(event, 'Protokoll')">Protokoll</button>
+    </div>
+    
+    <div id="Benachrichtungen" class="tabcontent" style="display: block;">
+      <table class="table">
+        <tbody><tr> 
+           <td> Bestellung-NR  <a href="bestelleung.html">####</a>  wartet auf Ihre Zustimmung </td> 
+           <td></td> 
+        </tr>
+        <tr> <td>Bestellung-NR   <a href="bestelleung.html">####</a>   ist in bearbeitung </td>
+          <td></td>
+        </tr>
+    
+        <tr>
+          <td>Bestellung-NR  <a href="bestelleung.html">####</a> ist schon bestelt. Abholung am 15/12/2021 <br>
+             (Wollen sie Timer aktivieren?) </td>
+          <td>
+          <input type="radio" id="ja" name="time_activat" value="ja">
+          <label for="ja">ja</label>
+          <input type="radio" id="nein" name="time_activat" value="nein">
+          <label for="nein">nein</label>
+        </td>
+       </tr>
+    
+        <tr>
+           <td>Abholung der Bestellung-NR   <a href="bestelleung.html">####</a>   würde verschoben.neu Abholungstremine am 15/12/2021 <br>
+             (wollen sie timer reset)</td>
+          <td>
+          <input type="radio" id="ja" name="time_reset" value="ja">
+          <label for="ja">ja</label>
+          <input type="radio" id="nein" name="time_reset" value="nein">
+          <label for="nein">nein</label>
+        </td>
+       </tr>
+    
+      </tbody></table>
+       
     </div>
 
-    <section></section>
-
-
-<img src="./images/2cars.jpg" alt="Logo" style="align-self: center; width: 80%; margin-bottom: 13px;">
-
-
-<section></section>
-
-
-<div class="tab">
-  <button class="tablinks" onclick="openCity(event, 'Benachrichtungen')" id="defaultOpen">Benachrichtungen</button>
-  <button class="tablinks" onclick="openCity(event, 'Reifen Organisation')">Reifen Organisation</button>
-  <button class="tablinks" onclick="openCity(event, 'Statestiks')">Statestiks</button>
-  <button class="tablinks" onclick="openCity(event, 'Diagramm')">Diagramm</button>
-  <button class="tablinks" onclick="openCity(event, 'Protokoll')">Protokoll</button>
-</div>
-
-<div id="Benachrichtungen" class="tabcontent">
-  <p>hier for loop für Benachrichtungen von DB</p>
-
-  <table class="table">
-    <tr> 
-       <td> Bestellung-NR  <a href="####">####</a>  wartet auf Ihre Zustimmung </td> 
-       <td></td> 
-    </tr>
-    <tr> <td>Bestellung-NR   <a href="####">####</a>   ist in bearbeitung </td>
-      <td></td>
-    </tr>
-
-    <tr>
-      <td>Bestellung-NR  <a href="####">####</a> ist schon bestelt. Abholung am 15/12/2021 <br>
-         (Wollen sie Timer aktivieren?) </td>
-      <td>
-      <input type="radio" id="ja" name="time_activat" value="ja">
-      <label for="ja">ja</label>
-      <input type="radio" id="nein" name="time_activat" value="nein">
-      <label for="nein">nein</label>
-    </td>
-   </tr>
-
-    <tr>
-       <td>Abholung der Bestellung-NR   <a href="####">####</a>   würde verschoben.neu Abholungstremine am 15/12/2021 <br>
-         (wollen sie timer reset)</td>
-      <td>
-      <input type="radio" id="ja" name="time_reset" value="ja">
-      <label for="ja">ja</label>
-      <input type="radio" id="nein" name="time_reset" value="nein">
-      <label for="nein">nein</label>
-    </td>
-   </tr>
-
-  </table>
+    <div id="Reifen Organisation" class="tabcontent" style="display: none;">
+       <table class="table">
+          <tbody><tr>
+             <td>SatzID</td>
+             <td>Druck</td>
+             <td>Besriftet</td>
+             <td>ProtoKolliert am</td>
+             <td>Besctelleung</td>
+             <td>Abholung</td>
+          </tr>
+          <tr>
+             <td>54354354#ftwdID</td>
+             <td>letzte werte</td>
+             <td>Ja/Nein</td>
+             <td>Datum</td>
+             <td>Ja/Nein</td>
+             <td>Ja/Nein</td>
+          </tr>
+       </tbody></table>
+    </div>
+    
+    <div id="Statestiks" class="tabcontent" style="display: none;">
+      <table class="table">
+        <tbody><tr>
+           <td>SatzID</td>
+           <td>Druck</td>
+           <td>Besriftet</td>
+           <td>ProtoKolliert am</td>
+           <td>Besctelleung</td>
+           <td>Abholung</td>
+        </tr>
+        <tr>
+           <td>54354354#ftwdID</td>
+           <td>letzte werte</td>
+           <td>Ja/Nein</td>
+           <td>Datum</td>
+           <td>Ja/Nein</td>
+           <td>Ja/Nein</td>
+        </tr>
+     </tbody></table>
+    
+     </div>
+    
+     <div id="Diagramm" class="tabcontent" style="display: none;">
+    
+       <dl>
+          <dt>
+            Druck Messungen
+          </dt>
+          <dd class="percentage percentage-11"><span class="text">date1</span></dd>
+          <dd class="percentage percentage-49"><span class="text">date2</span></dd>
+          <dd class="percentage percentage-16"><span class="text">date3</span></dd>
+          <dd class="percentage percentage-5"><span class="text">date4</span></dd>
+          <dd class="percentage percentage-2"><span class="text">date5</span></dd>
+          <dd class="percentage percentage-2"><span class="text">date6</span></dd>
+        </dl>
+    
+     </div>
+    
+     <div id="Protokoll" class="tabcontent" style="display: none;">
+       
+       <table class="table">
+          <tbody><tr>
+             <td>SatzID</td>
+             <td>Druck</td>
+             <td>Besriftet</td>
+             <td>ProtoKolliert am</td>
+             <td>Besctelleung</td>
+             <td>Abholung</td>
+          </tr>
+          <tr>
+             <td>54354354#ftwdID</td>
+             <td>letzte werte</td>
+             <td>Ja/Nein</td>
+             <td>Datum</td>
+             <td>Ja/Nein</td>
+             <td>Ja/Nein</td>
+          </tr>
+       </tbody></table>
+       <br>
+       <p>Neues Record Addieren</p> 
+       <br>
+       <table class="table">
+          <tr>            
+            <td><label for="SatzID">SatzID</label></td>
+            <td><label for="Druck">Druck</label></td>        
+            <td><label for="Besriftet">Besriftet</label></td>       
+            <td><label for="ProtoKolliert_am">ProtoKolliert am</label></td>         
+            <td><label for="Besctelleung"> Besctelleung</label></td>
+            <td><label for="Abholung"> Abholung</label></td>
+          </tr>
+          <tr> <td><input type="text" value="" class="adding"></td>
+            <td><input type="text" value="" class="adding"></td>
+            <td><input type="text" value=""  class="adding"></td>
+            <td><input type="text" value=""  class="adding"></td>
+            <td><input type="text" value=""  class="adding"></td> 
+            <td><input type="text" value=""  class="adding"></td>
+         </tr>
+       </table>
+       <br>
+       <input type="button" value="Addieren" onclick="" style="float: right;margin-right: 20px;">
    
-</div>
-
-
-
-
-<div id="Reifen Organisation" class="tabcontent">
-   <table class="table">
-      <tr>
-         <td>SatzID</td>
-         <td>Druck</td>
-         <td>Besriftet</td>
-         <td>ProtoKolliert am</td>
-         <td>Besctelleung</td>
-         <td>Abholung</td>
-      </tr>
-      <tr>
-         <td>54354354#ftwdID</td>
-         <td>letzte werte</td>
-         <td>Ja/Nein</td>
-         <td>Datum</td>
-         <td>Ja/Nein</td>
-         <td>Ja/Nein</td>
-      </tr>
-   </table>
-</div>
-
-<div id="Statestiks" class="tabcontent">
-   
-   <p>Hier kommen die Statestiks.</p>
-   <table class="table">
-    <tr>
-       <td>SatzID</td>
-       <td>Druck</td>
-       <td>Besriftet</td>
-       <td>ProtoKolliert am</td>
-       <td>Besctelleung</td>
-       <td>Abholung</td>
-    </tr>
-    <tr>
-       <td>54354354#ftwdID</td>
-       <td>letzte werte</td>
-       <td>Ja/Nein</td>
-       <td>Datum</td>
-       <td>Ja/Nein</td>
-       <td>Ja/Nein</td>
-    </tr>
- </table>
-
- </div>
-
- <div id="Diagramm" class="tabcontent">
-
-   <dl>
-      <dt>
-        Druck Messungen
-      </dt>
-      <dd class="percentage percentage-11"><span class="text">date1</span></dd>
-      <dd class="percentage percentage-49"><span class="text">date2</span></dd>
-      <dd class="percentage percentage-16"><span class="text">date3</span></dd>
-      <dd class="percentage percentage-5"><span class="text">date4</span></dd>
-      <dd class="percentage percentage-2"><span class="text">date5</span></dd>
-      <dd class="percentage percentage-2"><span class="text">date6</span></dd>
-    </dl>
-
- </div>
-
- <div id="Protokoll" class="tabcontent">
-   
-   <table class="table">
-      <tr>
-         <td>SatzID</td>
-         <td>Druck</td>
-         <td>Besriftet</td>
-         <td>ProtoKolliert am</td>
-         <td>Besctelleung</td>
-         <td>Abholung</td>
-      </tr>
-      <tr>
-         <td>54354354#ftwdID</td>
-         <td>letzte werte</td>
-         <td>Ja/Nein</td>
-         <td>Datum</td>
-         <td>Ja/Nein</td>
-         <td>Ja/Nein</td>
-      </tr>
-   </table>
-
-</div>
-
-
-
-   
-</body>
-</html> 
+    </div>
+       
+    
+     
+    </body></html>
