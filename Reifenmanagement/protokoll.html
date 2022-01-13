@@ -1,0 +1,94 @@
+
+
+<h4>Protokoll</h4>
+<table class="table">
+  <tbody>
+   <tr>
+     <td>Nr</td>
+     <td>Bezeichnung</td>
+     <td>Datum</td> 
+     <td>Uhrzeit</td>
+     <td>Spez</td>
+     <td>Session</td>     
+     <td>Kaltdruck</td>
+      <td>bei Temp</td>      
+      <td>Bleedkalt</td>
+      <td>Temperatur</td>
+      <td> Dauer</td>
+      <td> Start</td>
+      <td> Fertig</td>
+      <td> Bleed in Blankt</td>
+   </tr>
+   <tr>
+     <td id="nr"></td>
+     <td id="Reifenbezeichnung"></td>
+     <td id="Datum"></td> 
+     <td id="Uhrzeit"></td>
+     <td id="Spez"></td>
+     <td id="Session"></td>
+      <td id="Kaltdruck">
+        <table><tr>
+          <td id="lv"> lv </td>
+          <td id="rv"> rv </td>
+        </tr>
+        <tr>
+          <td id="lh"> lh </td>
+          <td id="rh"> rh </td>
+        </tr>
+      </table>
+      </td>
+
+      <td id="beiTemp"></td>
+      
+      <td id="Bleedkalt">
+        <table><tr>
+          <td id="lv"> lv </td>
+          <td id="rv"> rv </td>
+        </tr>
+        <tr>
+          <td id="lh"> lh </td>
+          <td id="rh"> rh </td>
+        </tr>
+      </table>
+      </td>
+     <td id="Temperatur"></td>
+     <td id="Dauer"> </td>
+     <td id="Start"> </td>
+     <td id="Fertig"> </td>
+     <td id="Bleed_in_Blankt"> </td>
+   </tr>
+</tbody></table>
+
+
+<h4>Wetterwerte</h4> 
+
+      <table class="table">
+
+        <tr>
+
+           <td>Tag</td>            
+           <td>Uhrzeit</td>        
+           <td>Luft</td>              
+           <td>Strecke</td>           
+           <td> Streckenverhältnisse</td>
+      
+        </tr>
+
+        <tr>
+
+          <td id="Tag"></td>            
+           <td id="Uhrzeit"></td>        
+           <td id="Luft"></td>              
+           <td id="Strecke"></td>           
+           <td id="Streckenverhältnisse"> </td>
+     
+       </tr>
+        </table>
+
+
+        <br>
+         <!-- Tankhistorie anzeigen lassen -->           
+          
+         <form action="includes/tanken_auslesen.php" method="post">
+          <button type="submit" name="daten-auslesen" class="btn btn-primary btn-block">Tankhistorie anzeigen</button>
+          </form> 
