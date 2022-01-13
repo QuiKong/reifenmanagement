@@ -1,0 +1,347 @@
+<html>
+    
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./assets/pages.css">
+    <link rel="stylesheet" href="./assets/statistics.css">
+    <script type="text/javascript" src="/assets/script.js"></script>
+
+    </head>
+    <body>
+         
+      <div class="navbar">
+        <a class="tablinks" onclick="opentab(event, 'Einstellung')">Einstellung </a> 
+        <a class="tablinks" onclick="window.location.href='login.html';"> Logout</a>
+        <a class="tablinks" style="float: right;"> Display Timer here </a> 
+      </div>
+      
+      <section></section>
+  
+    <div class="tab">
+      <img src="/assets/lms_logo_retina.png" style="width:200; padding-bottom: 5px;">
+      <iframe style="max-width: 220px; border: none; max-height: 65px;  background-color: transparent;" 
+      src="https://www.wetter.de/widget/mini/u1j9qt/L2RldXRzY2hsYW5kL3dldHRlci1rb2Vsbi0xODIyMDY3OS5odG1s/">
+      </iframe>
+      <button class="tablinks active" onclick="opentab(event, 'Benachrichtigung')" id="defaultOpen">Benachrichtigung</button>
+      <button class="tablinks" onclick="opentab(event, 'Neue Bestellung')">Neue Bestellung</button>
+      <button class="tablinks" onclick="opentab(event, 'Reifendrucksberechnung')">Reifendrucksberechnung</button>
+      <button class="tablinks" onclick="opentab(event, 'Statistik')">Statistik</button>
+      <button class="tablinks" onclick="opentab(event, 'Protokoll')">Protokoll</button>
+      <button class="tablinks" onclick="opentab(event, 'Rennwochenende')">Rennwochenende</button>
+      
+    </div>
+    
+
+ <!------------------- Benachrichtigung-------------------------------->
+
+    <div id="Benachrichtigung" class="tabcontent" style="display: block;">
+      <table class="table">
+        <tr> 
+           <td> Bestellung-NR  <a onclick="opentab(event, 'Bestellung-NR')">####</a>  
+            sollte bestellt werden
+          </td> 
+        </tr>
+    
+        <tr>
+          <td>Bestellung-NR  <a onclick="opentab(event, 'Bestellung-NR')">####</a> 
+            ist schon bestellt. Abholung am 15/12/2021 um **:** Uhr möglich. 
+          </td>
+        </tr>
+      </table>
+       
+    </div>
+
+     
+   <!------------------- Neue Bestellung -------------------------------->
+
+
+   <div id="Neue Bestellung" class="tabcontent" style="display: block;">
+    
+            <h2>Neue Bestellung </h2>
+              <h4>Mischung </h4>
+
+            <div class="form-group"> 
+            
+
+            <div class="form-group"> 
+            <input type="number" name="Mischung" placeholder="vorne Links" class="form-control"> 
+            </div> 
+
+            <div class="form-group"> 
+            <input type="number" name="Mischung" placeholder="vorne rechts" class="form-control"> 
+                </div> 
+
+            <div class="form-group"> 
+            <input type="number" name="Mischung" placeholder="hinten links" class="form-control"> 
+
+            </div> <div class="form-group"> 
+            <input type="number" name="Mischung" placeholder="hinten rechts" class="form-control"> 
+            </div> 
+
+        <br>   <div class="form-group"> 
+            <button type="submit" name="formular-submit" class="btn btn-primary btn-block">Bestellung abschicken</button>
+        </div> 
+     </div>
+  </div>
+
+     
+
+  <!----------------- Reifendrucksberechnung-------------------------------->
+
+      <div id="Reifendrucksberechnung" class="tabcontent" style="display: none;">  
+        <!--ein Beispiel zur Berechnung der Formel (script in Head)  -->
+        <h4>Formberechnen</h4>
+
+        
+        <form name="exmplform">
+            <input type="text" name="eingabe">
+            <input type="button" value="Berechnen" onclick="get_c()">
+        </form>
+        <div id="ergebnis">
+        </div>
+     <!-- Tabelle fuer Grundwerte u. Berechnung Reifendruck -->
+         
+        <table class="table">
+          <tbody>
+           <tr>
+                <td></td> 
+                <td>Reifendruck 20 °C</td>
+                <td>Drying Wet</td>
+                <td>Regenreifen</td>
+                <td>Reifendruck Slick @ 20 °C</td>
+                <td>Reifen / Felgen Tempeatur</td>
+                <td>Reifendruck angepasst</td>
+                <td>Target warm slick</td>
+            
+            </tr>
+            <tr>
+                <td>LV</td>
+                <td id="Reifendruck 20 °C"></td>
+                <td id="Drying Wet"></td>
+                <td id="Regenreifen"></td>
+                <td id="Reifendruck Slick @ 20 °C"></td>
+                <td id="Reifen / Felgen Tempeatur"></td>
+                <td id="Reifendruck angepasst"></td>
+                <td id="Target warm slick"></td>
+            
+            </tr>
+            <tr>
+                <td>LH</td>
+                <td id="Reifendruck 20 °C"></td>
+                <td id="Drying Wet"></td>
+                <td id="Regenreifen"></td>
+                <td id="Reifendruck Slick @ 20 °C"></td>
+                <td id="Reifen / Felgen Tempeatur"></td>
+                <td id="Reifendruck angepasst"></td>
+                <td id="Target warm slick"></td>
+            </tr>        
+            <tr>
+              <td>RV</td>
+                <td id="Reifendruck 20 °C"></td>
+                <td id="Drying Wet"></td>
+                <td id="Regenreifen"></td>
+                <td id="Reifendruck Slick @ 20 °C"></td>
+                <td id="Reifen / Felgen Tempeatur"></td>
+                <td id="Reifendruck angepasst"></td>
+                <td id="Target warm slick"></td>
+            </tr>
+            <tr>
+                <td>RH</td>
+                <td id="Reifendruck 20 °C"></td>
+                <td id="Drying Wet"></td>
+                <td id="Regenreifen"></td>
+                <td id="Reifendruck Slick @ 20 °C"></td>
+                <td id="Reifen / Felgen Tempeatur"></td>
+                <td id="Reifendruck angepasst"></td>
+                <td id="Target warm slick"></td>
+            </tr>
+            
+            
+          </tbody>
+        </table>
+          
+      </div>
+
+
+ <!--------------------- Protokoll -------------------------------->
+
+    <div id="Protokoll" class="tabcontent" style="display: none;">
+      <!-- Tabelle fuer Reifenorginsation  -->
+
+         <h4>Organisation</h4> 
+
+        <table class="table">
+          <tbody>
+            <tr>              
+               <td>SatzID</td>
+               <td>Beschriftet</td>
+               <td>Protokolliert am</td>
+               <td>Heizen</td>
+            </tr>
+            <tr>
+              <!-- SatzID auto incremeted in DB -->
+              <td id="SatzID">serialNrau</td>
+               <td id="Beschriftet">Ja/Nein</td>
+               <td id="Protokolliert_am">Datum</td>
+               <td id="Heizen">ja/nein </td>
+            </tr>            
+          </tbody>
+        </table>
+      
+        <!--------- Tabelle fuer Protokollierung der verwendeten Reifen------->
+        <h4>Reifendruckmessung</h4> 
+      
+        <table class="table">
+          <tbody>
+           <tr>
+             <td>Bezeichnung</td>
+             <td>Datum</td> 
+             <td>Uhrzeit</td>
+             <td>Spez</td>
+             <td>Session</td>
+             <td><br>LV</td>
+             <td><br>LH</td>
+             <td><br>RV</td>
+             <td>Kaltdruck<br>RH</td>
+              <td>bei Temp</td>
+              <td><br>LV</td>
+              <td><br>LH</td>
+              <td><br>RV</td>
+              <td>Bleedkalt<br>RH</td>
+              <td>Temperatur</td>
+              <td> Dauer</td>
+              <td> Start</td>
+              <td> Fertig</td>
+              <td> Bleed in Blankt</td>
+           </tr>
+           <tr>
+             <td id="Reifenbezeichnung"></td>
+             <td id="Datum"></td> 
+             <td id="Uhrzeit"></td>
+             <td id="Spez"></td>
+             <td id="Session"></td>
+             <td id="Kaltdruck_LV"></td>
+             <td id="Kaltdruck_LH"></td>
+             <td id="Kaltdruck_RV"></td>
+             <td id="Kaltdruck_RH"></td>
+             <td id="bei_Temp"></td>
+             <td id="Bleedkalt_LV"></td>
+             <td id="Bleedkalt_LH"></td>
+             <td id="Bleedkalt_RV"></td>
+             <td id="Bleedkalt_RH"></td>
+             <td id="Temperatur"></td>
+             <td id="Dauer"> </td>
+             <td id="Start"> </td>
+             <td id="Fertig"> </td>
+             <td id="Bleed_in_Blankt"> </td>
+           </tr>
+       </tbody>
+      </table>
+
+              <!-------- Tabelle fuer Wetterwerte ------->
+              <h4>Wetterwerte</h4> 
+
+        <table class="table">
+        
+                <tr>
+        
+                   <td>Tag</td>            
+                   <td>Uhrzeit</td>        
+                   <td>Luft</td>              
+                   <td>Strecke</td>           
+                   <td>Streckenverhältnisse</td>
+              
+                </tr>
+                <tr>
+
+                  <td id="Tag"></td>            
+                   <td id="Uhrzeit"></td>        
+                   <td id="Luft"></td>              
+                   <td id="Strecke"></td>           
+                   <td id="Streckenverhältnisse"> </td>
+             
+               </tr>
+          </table>
+
+              <h4>Tankwerte</h4>
+            
+                <!-- Tabelle fuer Tankwerte -->    
+                
+                <table class="table">
+        
+                  <tr>
+          
+                     <td>Session</td>            
+                     <td>Time</td>        
+                     <td>Driver</td>              
+                     <td>Menge</td>           
+                     <td>Info</td>
+                
+                  </tr>
+                  <tr>
+  
+                    <td id="Session"></td>            
+                     <td id="Time"></td>        
+                     <td id="Driver"></td>              
+                     <td id="Menge"></td>           
+                     <td id="Info"> </td>
+               
+                 </tr>
+                  </table>
+                           
+        
+   </div>
+  <!--------------------------------Statistik-------------------------------->
+
+  <div id="Statistik" class="tabcontent" style="display: none;">
+    <div w3-include-html="statistik.html"></div>
+  </div>
+
+    <!--------------------------------Einstellung -------------------------------->
+
+    <div id="Einstellung" class="tabcontent" style="display: none;">
+      <p>Ändern Sie ihr Passwort für Sicherheit!</p> 
+        <br>
+        <div class="body">
+          <p><label for="pass1">Passwort    :</label>
+            <input type="text" id="pass1" name="pass1" minlength="8" required></p>
+            
+            <p><label for="pass2">Wiederholen:</label>
+            <input type="text" id="pass2" name="pass2"></p>
+            
+        </div>
+        
+        <input type="submit" value="Sign in">
+   </div>
+
+       <!--------------------------------Bestellung-NR-------------------------------->
+
+       <div id="Bestellung-NR" class="tabcontent" style="display: none;">
+        <div style="padding: 20px;">
+          <table class="table">
+              <tr>
+                  <td > item</td>
+                  <td> menge</td>
+                  <td> eigenshaft1</td>
+                  <td>eigenshaft2</td>
+                  <td>eigenshaft3</td>
+                  <td>eigenshaft4</td>
+              </tr>
+          </table>
+      
+      </div>
+          
+       </div>     
+       
+     <!----------------- Rennwochenende -------------------------------->
+
+     <div id="Rennwochenende" class="tabcontent" style="display: block;">
+      <div w3-include-html="rennWE.html"></div>       
+    </div>
+    
+    <script>
+      includeHTML();
+    </script>
+    </body>
+    
+    </html>
