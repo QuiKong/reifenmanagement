@@ -111,10 +111,48 @@
         </form>
 
          <!-- Alle Wetterdaten anzeigen lassen-->            
-                
-         <form action="includes/wetter_auslesen.php" method="post">
-          <button type="submit" name="daten-auslesen" class="btn btn-primary btn-block">Wetterdaten auslesen</button>
-          </form> 
+<h4>Tankhistorie</h4>
+    <table class="table">
+        <tr>
+            <td>ID</td>
+            <td>Datum</td>
+            <td>Uhrzeit</td>
+            <td>Lufttemperatur</td>
+            <td>Streckentemperatur</td> 
+            <td>Steckenverhaeltnisse</td> 
+      </tr>
+
+
+
+    
+
+<?php 
+require 'includes/connection.php';
+
+
+$sql = "SELECT * FROM wetter";
+$result = $con->query($sql);
+
+
+if ($result->num_rows > 0){
+    
+    while ($row = $result->fetch_assoc()){
+    ?>    
+        <tr>
+            <td id="ID"><?php echo $row['MessID'];?></td>
+            <td id="Session"><?php echo $row['Datum'];?></td>
+            <td id="Uhrzeit"><?php echo $row['Zeit'];?></td>
+            <td id="Fahrer"><?php echo $row['LuftTemp'];?></td>
+            <td id="Menge"><?php echo $row['StreckenTemp'];?></td>
+            <td id="Bemerkung"><?php echo $row['Streckenverhaeltnisse'];?></td>
+        </tr>
+    <?php
+    }
+}
+?> 
+        
+        
+        </table>
       </div>    
 
        
@@ -165,9 +203,48 @@
         
         <!-- Tankhistorie anzeigen lassen -->           
           
-          <form action="includes/tanken_auslesen.php" method="post">
-          <button type="submit" name="daten-auslesen" class="btn btn-primary btn-block">Tankhistorie anzeigen</button>
-          </form> 
+         <h4>Tankhistorie</h4>
+    <table class="table">
+        <tr>
+            <td>ID</td>
+            <td>Session</td>
+            <td>Uhrzeit</td>
+            <td>Fahrer</td>
+            <td>Menge in Liter</td> 
+            <td>Bemerkung</td> 
+      </tr>
+
+
+
+    
+
+<?php 
+require 'includes/connection.php';
+
+
+$sql = "SELECT * FROM sprit";
+$result = $con->query($sql);
+
+
+if ($result->num_rows > 0){
+    
+    while ($row = $result->fetch_assoc()){
+    ?>    
+        <tr>
+            <td id="ID"><?php echo $row['VorgangsID'];?></td>
+            <td id="Session"><?php echo $row['Session'];?></td>
+            <td id="Uhrzeit"><?php echo $row['Zeit'];?></td>
+            <td id="Fahrer"><?php echo $row['Fahrer'];?></td>
+            <td id="Menge"><?php echo $row['Menge'];?></td>
+            <td id="Bemerkung"><?php echo $row['Info'];?></td>
+        </tr>
+    <?php
+    }
+}
+?> 
+        
+        
+        </table>
                    
     </div>
             
