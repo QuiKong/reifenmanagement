@@ -44,11 +44,11 @@
     <div id="Benachrichtigung" class="tabcontent" style="display: block;">
         <table class="table">
           <tbody><tr> 
-             <td> Bestellung-NR  <a onclick="opentab(event, 'Bestellung-NR')">####</a>  sollte bestellt werden</td> 
+             <td> Bestellung-NR  <a onclick="opentab(event, 'Offene Bestellung')">####</a>  sollte bestellt werden</td> 
              <td></td> 
              <td></td>
           </tr>
-          <tr> <td>Bestellung-NR   <a onclick="opentab(event, 'Bestellung-NR')">####</a>   ist abholbereit </td>
+          <tr> <td>Bestellung-NR   <a onclick="opentab(event, 'abholbereit')">####</a>   ist abholbereit </td>
             <td></td>
             <td></td>
           </tr>
@@ -111,7 +111,7 @@
         </form>
 
          <!-- Alle Wetterdaten anzeigen lassen-->            
-<h4>Tankhistorie</h4>
+<h4>Wetterdaten</h4>
     <table class="table">
         <tr>
             <td>ID</td>
@@ -249,24 +249,103 @@ if ($result->num_rows > 0){
     </div>
             
 
-          <!--------------------------------Bestellung-NR-------------------------------->
+<!--------------------------------Offene Bestellungen-------------------------------->
 
-          <div id="Bestellung-NR" class="tabcontent" style="display: none;">
+          <div id="Offene Bestellung" class="tabcontent" style="display: none;">
             <div style="padding: 20px;">
-              <table class="table">
-                  <tr>
-                      <td > item</td>
-                      <td> menge</td>
-                      <td> eigenshaft1</td>
-                      <td>eigenshaft2</td>
-                      <td>eigenshaft3</td>
-                      <td>eigenshaft4</td>
-                  </tr>
-              </table>
-          
-          </div>
+<h4>Offene Bestellungen</h4>
+    <table class="table">
+        <tr>
+            <td>Bestell-Nr.</td>
+            <td>Reifensatz-ID</td>
+            <td>Datum</td>
+            <td>Uhrzeit</td>
+      </tr>
+
+
+
+    
+
+<?php 
+require 'includes/connection.php';
+
+
+$sql = "SELECT * FROM bestellung WHERE Status=1";
+$result = $con->query($sql);
+
+
+if ($result->num_rows > 0){
+    
+    while ($row = $result->fetch_assoc()){
+    ?>    
+        <tr>
+            <td id="Bestell-Nr."><?php echo $row['BestellNr'];?></td>
+            <td id="Reifensatz-ID"><?php echo $row['Reifensatz'];?></td>
+            <td id="Datum"><?php echo $row['Datum'];?></td>
+            <td id="Uhrzeit"><?php echo $row['Zeit'];?></td>
+        </tr>
+    <?php
+    }
+}
+?> 
+        
+        
+        </table>
               
-           </div> 
+</div> 
+              
+              
+<!--------------------------------Abholbereite Bestellungen-------------------------------->
+
+          <div id="abholbereit" class="tabcontent" style="display: none;">
+            <div style="padding: 20px;">
+<h4>Abholbereite Bestellungen</h4>
+    <table class="table">
+        <tr>
+            <td>Bestell-Nr.</td>
+            <td>Reifensatz-ID</td>
+            <td>Datum</td>
+            <td>Uhrzeit</td>
+      </tr>
+
+
+
+    
+
+<?php 
+require 'includes/connection.php';
+
+
+$sql = "SELECT * FROM bestellung WHERE Status=3";
+$result = $con->query($sql);
+
+
+if ($result->num_rows > 0){
+    
+    while ($row = $result->fetch_assoc()){
+    ?>    
+        <tr>
+            <td id="Bestell-Nr."><?php echo $row['BestellNr'];?></td>
+            <td id="Reifensatz-ID"><?php echo $row['Reifensatz'];?></td>
+            <td id="Datum"><?php echo $row['Datum'];?></td>
+            <td id="Uhrzeit"><?php echo $row['Zeit'];?></td>
+        </tr>
+    <?php
+    }
+}
+?> 
+        
+        
+        </table>
+              
+</div> 
+                      
+              
+              
+              
+              
+              
+              
         <!--------------------------------Einstellung -------------------------------->
 
         <div id="Einstellung" class="tabcontent" style="display: none;">
