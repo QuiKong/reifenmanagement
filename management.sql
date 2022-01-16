@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 13. Jan 2022 um 12:07
+-- Erstellungszeit: 16. Jan 2022 um 15:52
 -- Server-Version: 10.4.22-MariaDB
 -- PHP-Version: 7.3.33
 
@@ -34,6 +34,14 @@ CREATE TABLE `bestellung` (
   `Zeit` time NOT NULL,
   `Status` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Daten für Tabelle `bestellung`
+--
+
+INSERT INTO `bestellung` (`BestellNr`, `Reifensatz`, `Datum`, `Zeit`, `Status`) VALUES
+(7, 1, '2022-01-16', '15:00:00', 1),
+(8, 2, '2022-01-16', '15:46:07', 3);
 
 -- --------------------------------------------------------
 
@@ -209,12 +217,13 @@ CREATE TABLE `status` (
 --
 
 INSERT INTO `status` (`StatusID`, `Status`) VALUES
-(1, 'bestellt'),
-(2, 'abgeholt'),
-(3, 'beschriftet'),
-(4, 'heizen'),
-(5, 'Einsatz'),
-(6, 'gebraucht');
+(1, 'offen'),
+(2, 'bestellt'),
+(3, 'abgeholt'),
+(4, 'beschriftet'),
+(5, 'heizen'),
+(6, 'Einsatz'),
+(7, 'gebraucht');
 
 -- --------------------------------------------------------
 
@@ -336,7 +345,7 @@ ALTER TABLE `wetter`
 -- AUTO_INCREMENT für Tabelle `bestellung`
 --
 ALTER TABLE `bestellung`
-  MODIFY `BestellNr` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `BestellNr` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT für Tabelle `reifen`
