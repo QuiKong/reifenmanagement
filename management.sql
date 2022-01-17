@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 16. Jan 2022 um 15:52
+-- Erstellungszeit: 17. Jan 2022 um 12:29
 -- Server-Version: 10.4.22-MariaDB
 -- PHP-Version: 7.3.33
 
@@ -32,16 +32,9 @@ CREATE TABLE `bestellung` (
   `Reifensatz` int(11) NOT NULL,
   `Datum` date NOT NULL,
   `Zeit` time NOT NULL,
-  `Status` int(11) NOT NULL
+  `Status` int(11) NOT NULL,
+  `Mitarbeiter` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Daten für Tabelle `bestellung`
---
-
-INSERT INTO `bestellung` (`BestellNr`, `Reifensatz`, `Datum`, `Zeit`, `Status`) VALUES
-(7, 1, '2022-01-16', '15:00:00', 1),
-(8, 2, '2022-01-16', '15:46:07', 3);
 
 -- --------------------------------------------------------
 
@@ -279,7 +272,8 @@ INSERT INTO `wetter` (`MessID`, `Datum`, `Zeit`, `LuftTemp`, `StreckenTemp`, `St
 --
 ALTER TABLE `bestellung`
   ADD PRIMARY KEY (`BestellNr`),
-  ADD KEY `Reifensatz` (`Reifensatz`);
+  ADD KEY `Reifensatz` (`Reifensatz`),
+  ADD KEY `Mitarbeiter` (`Mitarbeiter`);
 
 --
 -- Indizes für die Tabelle `reifen`
@@ -403,7 +397,8 @@ ALTER TABLE `wetter`
 -- Constraints der Tabelle `bestellung`
 --
 ALTER TABLE `bestellung`
-  ADD CONSTRAINT `bestellung_ibfk_2` FOREIGN KEY (`Reifensatz`) REFERENCES `reifensatz` (`Reifensatz`);
+  ADD CONSTRAINT `bestellung_ibfk_2` FOREIGN KEY (`Reifensatz`) REFERENCES `reifensatz` (`Reifensatz`),
+  ADD CONSTRAINT `bestellung_ibfk_3` FOREIGN KEY (`Mitarbeiter`) REFERENCES `users` (`ID`);
 
 --
 -- Constraints der Tabelle `reifen2`
