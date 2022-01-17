@@ -251,7 +251,7 @@ if ($result->num_rows > 0){
 
 <!--------------------------------Offene Bestellungen-------------------------------->
 
-          <div id="Offene Bestellung" class="tabcontent" style="display: none;">
+<div id="Offene Bestellung" class="tabcontent" style="display: none;">
             <div style="padding: 20px;">
 <h4>Offene Bestellungen</h4>
     <table class="table">
@@ -261,11 +261,6 @@ if ($result->num_rows > 0){
             <td>Datum</td>
             <td>Uhrzeit</td>
       </tr>
-
-
-
-    
-
 <?php 
 require 'includes/connection.php';
 
@@ -289,15 +284,15 @@ if ($result->num_rows > 0){
 }
 ?> 
         
-        
-        </table>
+ </table>
               
 </div> 
+    </div>              
               
               
 <!--------------------------------Abholbereite Bestellungen-------------------------------->
 
-          <div id="abholbereit" class="tabcontent" style="display: none;">
+<div id="abholbereit" class="tabcontent" style="display: none;">
             <div style="padding: 20px;">
 <h4>Abholbereite Bestellungen</h4>
     <table class="table">
@@ -307,9 +302,6 @@ if ($result->num_rows > 0){
             <td>Datum</td>
             <td>Uhrzeit</td>
       </tr>
-
-
-
     
 
 <?php 
@@ -339,7 +331,8 @@ if ($result->num_rows > 0){
         </table>
               
 </div> 
-                      
+        
+        </div>
               
               
               
