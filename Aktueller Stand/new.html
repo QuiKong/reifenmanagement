@@ -1,0 +1,181 @@
+<h4>Neue Reihe</h4> 
+      
+<table class="table">
+  <!-- protokoll_Nr: auto incremented number of rows in protokoll table in DB --> 
+  <tr> 
+     <td><label for="Reifenbezeichnung">Reifenbezeichnung</label></td>            
+     <td><input id="Reifenbezeichnung" type="number" value="" class="adding"></td>             
+     <td><label for="Datum">Datum</label></td>  
+     <td><input id="Datum" type="date" value="" class="adding"></td>
+
+  </tr>
+  <tr>     
+     <td><label for="Uhrzeit">Uhrzeit</label></td>  
+     <td><input id="Uhrzeit" type="time" value="" class="adding"></td>    
+     <td><label for="Spez"> Spez</label></td>            
+     <td><input id="Spez" type="text" value="" class="adding"></td> 
+
+  </tr>
+  <tr>
+     <td><label for="Session"> Session</label></td>            
+     <td><input id="Session" type="text" value="" class="adding"></td>
+     <td><label for="bei_Temp"> bei Temp</label></td>            
+     <td><input id="bei_Temp" type="number" value="" class="adding"></td>
+  </tr>
+  <tr>
+   <td><label for="Temperatur"> Temperatur</label></td>            
+   <td><input id="Temperatur" type="number" value="" class="adding"></td>         
+   <td><label for="Dauer"> Dauer</label></td>            
+   <td><input id="Dauer" type="time" value="" class="adding"></td>
+  </tr>
+  <tr>
+   <td><label for="Start"> Start</label></td>            
+   <td><input id="Start" type="text" value="" class="adding"></td>         
+   <td><label for="Fertig"> Fertig</label></td>            
+   <td><input id="Fertig" type="text" value="" class="adding"></td>
+ </tr>
+ <tr>
+   <td><label for="Bleed_in_Blankt"> Bleed in Blankt</label></td>            
+   <td><input id="Bleed_in_Blankt" type="text" value="" class="adding"></td>
+   <td></td> 
+   <td></td>
+ </tr>
+   <tr> 
+     <td></td>
+     <td></td>
+     <td></td> 
+     <td><input id="addRow" type="button" value="Addieren" onclick="" style="float: right;margin-right: 20px;"></td>
+  </tr>
+  </table> 
+     
+     <h4>Eine Reihe löschen</h4>
+<table class="table">
+<tr> 
+<td><label for="Nr">Nr</label></td>
+<td><input id="deleteRow" type="text" value="" class="delete"></td>
+
+<td> <input type="button" value="löschen" onclick="" class="button" style="float: right;margin-right: 20px;"></td>
+</tr>
+
+</table>
+
+
+
+<div>
+   <table class="table">
+       <h4>Reifensätze</h4>
+       <tr>
+           <td>Reifensatz</td> 
+           <td>Art</td> 
+           <td>Spezifikation</td> 
+           <td>Position</td>
+           <td>Kaltdruck</td>
+           <td>TempAbholung</td>
+           <td>Zieldruck</td>
+           <td>Zieltemperatur</td>
+       </tr>
+       <tr>
+           <td><input type="number"></td>
+           <td><input type="number"></td>
+           <td><input type="number"></td>
+           <td><input type="number"></td>
+           <td><input type="number"></td>
+           <td><input type="number"></td>
+           <td><input type="number"></td>
+           <td><input type="number"></td>
+           <td>Überprüft<input type="checkbox" name="scanned" value="ja"></td>
+
+       </tr>
+   </table>
+ </div>
+
+
+ <h4>Session 2</h4>
+<table>
+    <tr>
+        <td>Session</td> 
+        <td>Datum</td> 
+        <td>Beginn</td>
+        <td>Ende</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td><input type="text"></td>
+        <td><input type="date"></td>
+        <td><input type="time"></td>
+        <td><input type="time"></td>
+        <td><button type="submit" name="add" value="add">Add</button></td>
+    </tr>
+</table>
+
+
+<h4>Zeitplan</h4>
+
+  <div class="h_tab">
+    <button class="tablinks" onclick="openHtab(event, 'Donnerstag')">Donnerstag</button>
+    <button class="tablinks" onclick="openHtab(event, 'Freitag')">Freitag</button>
+    <button class="tablinks" onclick="openHtab(event, 'Samstag')">Samstag</button>
+  </div>
+  
+  <!-- Tab content -->
+  <div id="Donnerstag" class="h_tabcontent">
+    <h3>Donnerstag</h3>
+    <table  >
+        <tr>
+            <td>Training</td> 
+            <td>Zeittraining</td> 
+            <td>Auto</td>
+            <td>Startaufstellung</td>
+            <td>Rennen</td>
+        </tr>
+        <tr>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+        </tr>
+    </table>
+  </div>
+  
+  <div id="Freitag" class="h_tabcontent">
+    <h3>Freitag</h3>
+    <table  >
+        <tr>
+            <td>Training</td> 
+            <td>Zeittraining</td> 
+            <td>Auto</td>
+            <td>Startaufstellung</td>
+            <td>Rennen</td>
+        </tr>
+        <tr>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+        </tr>
+    </table>
+  </div>
+  
+  <div id="Samstag" class="h_tabcontent">
+    <h3>Samstag</h3>
+    <table  >
+        <tr>
+            <td>Training</td> 
+            <td>Zeittraining</td> 
+            <td>Auto</td>
+            <td>Startaufstellung</td>
+            <td>Rennen</td>
+        </tr>
+        <tr>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+        </tr>
+    </table>
+  </div>
+
+ 

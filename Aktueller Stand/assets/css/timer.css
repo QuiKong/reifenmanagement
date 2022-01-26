@@ -1,0 +1,192 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    font: normal bold 16px/normal tahoma;
+}
+
+article {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 27px;
+    width: 300px;
+    text-align: center;
+    background-color: #005093;
+    border-radius: 10px;
+    padding: 5px;
+    overflow: hidden;
+    box-shadow: 3px 3px 10px #ccc;
+    color:#fff;
+}
+
+article h3 {
+    padding: 10px;
+    color: #fff;
+}
+article .count {
+    padding: 5px;
+}
+article #timer{
+    padding: 5px;
+    color: crimson;
+    background-color: aliceblue;
+    border-radius: 2px;
+}
+
+ .timer_input{
+     border: 1px solid #cccc;
+     height: 33px;
+     width: 83%;
+     margin: 8px 21px;
+}
+.d-none{
+display: none !important;
+}
+.d-block{
+display: block;
+}
+
+
+
+.container {
+    display:flex;
+    min-height: 10vh;
+    justify-content: end;
+}
+.options {
+    height : 70px;
+    width : 100%;
+    display : flex;
+}
+.option {
+    flex-grow: 1;
+    background: black;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    color: white;
+    padding: 20px !important;
+    margin: 10px;
+}
+.option::placeholder {
+    color : #fff;
+}
+
+.form-group input {
+    width: 20%;
+    border: 1px solid #ccc;
+    background: #FFF;
+    margin: 0 0 5px;
+    padding: 10px;
+}
+.form-group select{
+    width: 20%;
+    border: 1px solid #ccc;
+    background: #FFF;
+    margin: 0 0 5px;
+    padding: 10px;   
+}
+.btn-block{
+    cursor: pointer;
+    width: 20%;
+    border: none;
+    background: #005093;
+    color: #FFF;
+    margin: 0 0 5px;
+    padding: 10px;
+    font-size: 15px;
+    font-weight: bold;
+}
+.btn-block2{
+    cursor: pointer;
+    border: none;
+    background: #005093;
+    color: #FFF;
+    margin: 0 0 5px;
+    padding: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius:10px; 
+}
+
+.display {
+    display:flex;
+    width:300px;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(
+            45deg
+            , #68b04d 0%,#9ae2aa 50%,#68b04d 100%);
+}
+.time_left {
+    font-size: 1.5rem;
+    color:white;
+    text-shadow:4px 4px 0   rgba(0,0,0,0.05);
+    padding: 10px;
+}
+.end_time {
+    font-size: 2rem;
+    color:white;
+}
+.timer_options_btn button{
+    width: 77px;
+    height: 28px;
+    border: none;
+    margin: 9px;
+    border-radius: 0px;
+}
+
+tbody tr:nth-child(odd){
+    background-color: #f8f9fa;
+  }
+
+  
+  tbody tr:nth-child(even){
+    background-color: #e9ecef;
+  }
+
+
+  .table tbody tr td select{
+    padding: 10px; 
+    width:100%;
+  }
+  .table tbody tr td input{
+    padding: 10px; 
+    width:100%;
+  }
+
+
+
+  /*add Btn*/
+
+  .addBtn{
+    background-color: #005093;
+    padding: 10px;
+    border-radius: 10px;
+    width: 10px;
+    height: 10px;
+    line-height: 10px;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  .abschickenBtn{
+      display:flex;
+      justify-content:end;
+      margin-top:20px;
+      margin-bottom:50px;
+  }
+  .tabcontent .txt-title{
+    padding: 20px;
+    background-color: #005093;
+    color: #fff;
+    margin-bottom:20px;
+  }
+  .nav-justify-end{
+      justify-content:end !important;
+  }

@@ -1,0 +1,79 @@
+<h4 class="txt-title">Neues Rennwochenende anlegen</h4>
+
+<table class="table">
+    <tbody>
+    <tr>
+        <th>Von</th> 
+        <th>Bis</th> 
+        <th>Strecke</th> 
+        <th>Rennformat</th> 
+        <th>Bemerkung</th> 
+
+    </tr>
+    <tr>
+        <td><input type="date"></td>
+        <td><input type="date"></td>
+        <td><input type="text"></td>
+        <td><input type="text"></td>
+        <td><input type="text"></td>
+
+    </tr>
+</tbody>
+</table>
+
+<button type="submit" name="add" value="add" class="btn-block2">Rennwochenende anlegen</button>
+
+<h4 class="txt-title">Neue Session</h4>
+<table class="table">
+    <tbody>
+    <tr>
+        <th>Session</th> 
+        <th>Datum</th> 
+        <th>Beginn</th>
+        <th>Ende</th>
+
+    </tr>
+    <tr>
+        <td><input type="text"></td>
+        <td><input type="date"></td>
+        <td><input type="time"></td>
+        <td><input type="time"></td>
+    </tr>
+</tbody>
+</table>
+<button type="submit" name="add" value="add" class="btn-block2">Session anlegen</button>
+
+
+
+<h4 class="txt-title">Bestellungsinformationen</h4> 
+<table class="table">
+<tbody>
+    <tr>
+       <th>BestellNr</th>
+       <th>Reifensatz</th>
+       <th>Datum</th>
+       <th>Zeit</th>
+       <th>Status</th>
+    </tr>
+    <tr>
+      <!-- BestellNr auto incremeted in DB -->
+      <td><input type="number"> </td>
+      <td><input type="number"> </td>
+       <td><input type="date"> </td>
+       <td><input type="time"> </td>
+       <td> 
+         <select id="Status" name="Status">
+            <option value="bestellt">bestellt</option>
+            <option value="abgeholt">abgeholt</option>
+            <option value="beschriftet">beschriftet</option>
+            <option value="heizen">heizen</option>
+            <option value="Einsatz">Einsatz</option>
+            <option value="gebraucht">gebraucht</option>
+         </select> 
+        </td>
+
+    </tr>
+  </tbody>
+</table>
+<button type="submit" name="add" value="add" class="btn-block2">submit</button>
+  </div>
