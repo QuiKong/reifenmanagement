@@ -34,7 +34,7 @@ if(!isset($_SESSION["username"])){
         <td><input type="int" name="kontingent"></td>
         <td><input type="text" name="bemerkung"></td>
         
-        <td><button type="submit" value="WEanlegen" name="weanlegen">Rennwochenende anlegen</button></td>
+        <td><button class="btn-block2" type="submit" value="WEanlegen" name="weanlegen">Rennwochenende anlegen</button></td>
        
     </tr>
 </table>
@@ -79,7 +79,7 @@ if(!isset($_SESSION["username"])){
 
             ?>
             </td>
-            <td><button type="submit" name="SEanlegen" value="add">Session anlegen</button></td>
+            <td><button class="btn-block2" type="submit" name="SEanlegen" value="add">Session anlegen</button></td>
         </tr>
     
     </table>
